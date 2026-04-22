@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjana B Atrey | Solutions Engineer & Automation Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0f1419;
+            --navy-light: #1a202c;
+            --teal: #06b6d4;
+            --teal-dark: #0891b2;
+            --gray-light: #e8eaed;
+            --gray-dark: #64748b;
+            --accent: #f59e0b;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--navy) 0%, #1a1f2e 100%);
+            color: #e8eaed;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0 1.5rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--teal);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--teal);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            animation: slideInLeft 0.8s ease-out;
+        }
+
+        .hero-content h1 .highlight {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            line-height: 1.8;
+            animation: slideInLeft 0.8s ease-out 0.1s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--teal);
+            border: 2px solid var(--teal);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(6, 182, 212, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .stat-card {
+            background: rgba(26, 32, 44, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            position: absolute;
+            width: 280px;
+        }
+
+        .stat-card:nth-child(1) {
+            top: 20px;
+            left: 0;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .stat-card:nth-child(2) {
+            top: 280px;
+            right: 0;
+            animation: float 6s ease-in-out infinite 0.3s;
+        }
+
+        .stat-card h3 {
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--teal);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal), var(--accent));
+            border-radius: 2px;
+        }
+
+        /* Skills Section */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-cluster {
+            background: rgba(26, 32, 44, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .skill-cluster:hover {
+            border-color: rgba(6, 182, 212, 0.5);
+            background: rgba(26, 32, 44, 0.7);
+            transform: translateY(-4px);
+        }
+
+        .skill-cluster h3 {
+            color: var(--teal);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-cluster ul {
+            list-style: none;
+        }
+
+        .skill-cluster li {
+            color: var(--gray-dark);
+            margin-bottom: 0.7rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-cluster li::before {
+            content: '▸';
+            color: var(--teal);
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        /* Experience Section */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .experience-card {
+            border-left: 3px solid var(--teal);
+            padding-left: 2rem;
+            position: relative;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .experience-card:nth-child(1) { animation-delay: 0.1s; }
+        .experience-card:nth-child(2) { animation-delay: 0.2s; }
+        .experience-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--teal);
+            border-radius: 50%;
+            border: 3px solid var(--navy);
+        }
+
+        .experience-card h3 {
+            color: var(--teal);
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-card .role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-card .dates {
+            color: var(--gray-dark);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .experience-card p {
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        .impact-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .impact-tag {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--teal);
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(26, 32, 44, 0.5);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(245, 158, 11, 0.1));
+            padding: 2rem;
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .project-card h3 {
+            color: var(--teal);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card .category {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-body p {
+            color: var(--gray-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric {
+            background: rgba(6, 182, 212, 0.05);
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .metric .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--teal);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .metric .label {
+            font-size: 0.8rem;
+            color: var(--gray-dark);
+            margin-top: 0.4rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--teal);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: rgba(6, 182, 212, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: var(--gray-dark);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--teal);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .social-links a:hover {
+            background: var(--teal);
+            color: var(--navy);
+            transform: translateY(-4px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-dark);
+            border-top: 1px solid rgba(6, 182, 212, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 6rem 1.5rem 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                margin: 0 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">SBA</div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-content">
+            <h1>SaaS Implementation<br><span class="highlight">Problem Solver</span></h1>
+            <p>3+ years delivering end-to-end solutions that reduce complexity, automate repetition, and ship measurable impact. From requirements to go-live in weeks.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="https://linkedin.com/in/sanjana-b-atrey" target="_blank" class="btn btn-secondary">LinkedIn</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="stat-card">
+                <h3>End-to-End Implementations</h3>
+                <div class="number">10+</div>
+            </div>
+            <div class="stat-card">
+                <h3>Manual Work Reduced</h3>
+                <div class="number">50%</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies -->
+    <section id="skills">
+        <h2 class="section-title">Core Competencies</h2>
+        <div class="skills">
+            <div class="skill-cluster">
+                <h3>🔧 Implementation</h3>
+                <ul>
+                    <li>End-to-End SaaS Delivery</li>
+                    <li>Stakeholder Management</li>
+                    <li>Go-Live Execution</li>
+                    <li>Client Onboarding</li>
+                </ul>
+            </div>
+            <div class="skill-cluster">
+                <h3>⚙️ Automation & Integration</h3>
+                <ul>
+                    <li>n8n Workflow Design</li>
+                    <li>REST API Integration</li>
+                    <li>Data Mapping & ETL</li>
+                    <li>Form.io Custom Logic</li>
+                    <li>Business Process Automation</li>
+                </ul>
+            </div>
+            <div class="skill-cluster">
+                <h3>📊 Digital Products</h3>
+                <ul>
+                    <li>Dashboard Development</li>
+                    <li>HTML/CSS/JavaScript</li>
+                    <li>Interactive Prototypes (Figma)</li>
+                    <li>Data Visualization</li>
+                    <li>Product Demos (Demostack)</li>
+                </ul>
+            </div>
+            <div class="skill-cluster">
+                <h3>👥 Leadership & Process</h3>
+                <ul>
+                    <li>Team Leadership</li>
+                    <li>Intern Mentoring</li>
+                    <li>Documentation & Runbooks</li>
+                    <li>Cross-Functional Collaboration</li>
+                    <li>Quality Assurance</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="role">Automation Team Lead</div>
+                <h3>EOX Vantage</h3>
+                <div class="dates">Jun 2025 – Jan 2026 · 8 months</div>
+                <p>Took ownership of an ETL pipeline suite for an insurance client (18 scheduled pipelines across daily, weekly, monthly cadences). Maintained inherited systems, built net-new pipelines, and created comprehensive documentation that enabled the client's data team to operate independently.</p>
+                <div class="impact-highlights">
+                    <span class="impact-tag">ETL Pipelines</span>
+                    <span class="impact-tag">Talend</span>
+                    <span class="impact-tag">Technical Documentation</span>
+                    <span class="impact-tag">Client Enablement</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="role">Technical Solutions Engineer</div>
+                <h3>EOX Vantage</h3>
+                <div class="dates">Jun 2023 – Jun 2025 · 2 years 1 month</div>
+                <p>Delivered 10+ end-to-end SaaS implementations, among which are CRM, HRIS, Helpdesk, Onboarding, QMS, and ISMS. Built a generalised PDF mapping workflow in n8n that became the standard for all client implementations—eliminating repetitive manual mapping. Created 25 tailored product demos and designed interactive prototypes in Figma. Mentored 4 interns, reducing their ramp-up time by ~25%.</p>
+                <div class="impact-highlights">
+                    <span class="impact-tag">10+ Implementations</span>
+                    <span class="impact-tag">n8n Automation</span>
+                    <span class="impact-tag">50% Manual Work Reduction</span>
+                    <span class="impact-tag">Team Leadership</span>
+                </div>
+            </div>
+
+            <div class="experience-card">
+                <div class="role">Intern</div>
+                <h3>EOX Vantage</h3>
+                <div class="dates">Jun 2022 – May 2023 · 1 year</div>
+                <p>Built and delivered 8 real-time dashboards for internal clients, translating raw data into actionable visibility. Developed 3 internal applications on the low-code platform, gaining hands-on experience with the full implementation lifecycle.</p>
+                <div class="impact-highlights">
+                    <span class="impact-tag">8 Dashboards</span>
+                    <span class="impact-tag">Low-Code Development</span>
+                    <span class="impact-tag">Data Visualization</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section id="projects">
+        <h2 class="section-title">Featured Work</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="category">Automation</div>
+                    <h3>PDF Mapping Workflow</h3>
+                </div>
+                <div class="project-body">
+                    <p>A generalised n8n workflow that eliminated repetitive client form mapping. Before: manual process for each client. After: one-click mapping that the team adopted across all implementations.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="value">50%</div>
+                            <div class="label">Manual Work Reduced</div>
+                        </div>
+                        <div class="metric">
+                            <div class="value">100%</div>
+                            <div class="label">Team Adoption</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gray-dark); margin-bottom: 0;">Problem: Every client had unique form structures. Solution: Build once, deploy everywhere.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="category">Integration</div>
+                    <h3>Insurance IMS Integration</h3>
+                </div>
+                <div class="project-body">
+                    <p>End-to-end form-to-system workflow connecting Form.io submissions directly to an MGA insurance system. Handles submissions, quote generation, and document delivery automatically.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="value">0</div>
+                            <div class="label">Manual Handoffs</div>
+                        </div>
+                        <div class="metric">
+                            <div class="value">3</div>
+                            <div class="label">System Integration Points</div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">n8n</span>
+                        <span class="tech-tag">Form.io</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">MGA IMS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="category">Implementation</div>
+                    <h3>ETL Pipeline Suite</h3>
+                </div>
+                <div class="project-body">
+                    <p>Took ownership of an 18-pipeline ETL suite for an insurance client. Documented every script, fixed inherited issues, and built new pipelines while enabling the client's team to operate independently.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="value">18</div>
+                            <div class="label">Active Pipelines</div>
+                        </div>
+                        <div class="metric">
+                            <div class="value">1</div>
+                            <div class="label">New Pipeline</div>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Talend</span>
+                        <span class="tech-tag">ETL</span>
+                        <span class="tech-tag">Documentation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact">
+            <h2>Let's Work Together</h2>
+            <p>I'm actively looking for remote Implementation Specialist, Solutions Engineer, or Customer Success Engineer roles. If you have an interesting challenge or just want to chat about SaaS implementations, I'd love to hear from you.</p>
+            <div class="social-links">
+                <a href="mailto:sanjanaatrey@gmail.com" title="Email">✉</a>
+                <a href="https://linkedin.com/in/sanjana-b-atrey" target="_blank" title="LinkedIn">in</a>
+                <a href="https://github.com/AtreySanjana" target="_blank" title="GitHub">⚡</a>
+            </div>
+            <a href="mailto:sanjanaatrey@gmail.com" class="btn btn-primary">Send Me an Email</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Sanjana B Atrey. Built to ship. | <a href="https://github.com" style="color: var(--teal); text-decoration: none;">GitHub</a></p>
+    </footer>
+</body>
+</html>
