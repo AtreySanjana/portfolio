@@ -714,46 +714,28 @@
             <div class="project-card">
                 <div class="project-header">
                     <div class="category">Automation</div>
-                    <h3>PDF Mapping Workflow</h3>
+                    <h3>Automated Client Onboarding</h3>
                 </div>
                 <div class="project-body">
-                    <p>A generalised n8n workflow that eliminated repetitive client form mapping. Before: manual process for each client. After: one-click mapping that the team adopted across all implementations.</p>
+                    <p>End-to-end n8n workflow that transforms messy employee data into fully onboarded users in minutes. Accepts CSV/JSON, validates everything, normalizes data, creates accounts, and sends personalized welcome emails with zero manual effort.</p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="value">50%</div>
-                            <div class="label">Manual Work Reduced</div>
+                            <div class="value">80%</div>
+                            <div class="label">Time Savings</div>
                         </div>
                         <div class="metric">
-                            <div class="value">100%</div>
-                            <div class="label">Team Adoption</div>
+                            <div class="value">0%</div>
+                            <div class="label">Error Rate</div>
                         </div>
                     </div>
-                    <p style="font-size: 0.9rem; color: var(--gray-dark); margin-bottom: 0;">Problem: Every client had unique form structures. Solution: Build once, deploy everywhere.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-header">
-                    <div class="category">Integration</div>
-                    <h3>Insurance IMS Integration</h3>
-                </div>
-                <div class="project-body">
-                    <p>End-to-end form-to-system workflow connecting Form.io submissions directly to an MGA insurance system. Handles submissions, quote generation, and document delivery automatically.</p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <div class="value">0</div>
-                            <div class="label">Manual Handoffs</div>
-                        </div>
-                        <div class="metric">
-                            <div class="value">3</div>
-                            <div class="label">System Integration Points</div>
-                        </div>
-                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gray-dark); margin-bottom: 1rem;">Reduces 3-5 hours per client to 8 minutes. Handles 10+ date formats, phone variations, role mappings, and duplicate detection automatically.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">n8n</span>
-                        <span class="tech-tag">Form.io</span>
-                        <span class="tech-tag">REST API</span>
-                        <span class="tech-tag">MGA IMS</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">SendGrid</span>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="https://github.com/AtreySanjana/client-onboarding-automation" target="_blank" style="color: var(--teal); text-decoration: none; font-weight: 600; font-size: 0.9rem;">View on GitHub →</a>
                     </div>
                 </div>
             </div>
@@ -761,24 +743,45 @@
             <div class="project-card">
                 <div class="project-header">
                     <div class="category">Implementation</div>
-                    <h3>ETL Pipeline Suite</h3>
+                    <h3>Multi-Format Data Processing</h3>
                 </div>
                 <div class="project-body">
-                    <p>Took ownership of an 18-pipeline ETL suite for an insurance client. Documented every script, fixed inherited issues, and built new pipelines while enabling the client's team to operate independently.</p>
+                    <p>Intelligent workflow that accepts data in multiple formats (CSV, JSON, Excel) and automatically parses, validates, and normalizes everything to a standard schema without manual intervention.</p>
                     <div class="project-metrics">
                         <div class="metric">
-                            <div class="value">18</div>
-                            <div class="label">Active Pipelines</div>
+                            <div class="value">10+</div>
+                            <div class="label">Date Formats Handled</div>
                         </div>
                         <div class="metric">
-                            <div class="value">1</div>
-                            <div class="label">New Pipeline</div>
+                            <div class="value">6+</div>
+                            <div class="label">Phone Formats</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--gray-dark); margin-bottom: 0;">Detects and maps role abbreviations, assigns department defaults, normalizes whitespace, and handles incomplete data gracefully.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div class="category">Architecture</div>
+                    <h3>Error Handling & Validation</h3>
+                </div>
+                <div class="project-body">
+                    <p>Comprehensive validation system that checks email formats, required fields, phone numbers, and dates. Invalid records are logged and reported without stopping the workflow, ensuring partial batch failures don't block entire imports.</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="value">100%</div>
+                            <div class="label">Data Validation</div>
+                        </div>
+                        <div class="metric">
+                            <div class="value">5+</div>
+                            <div class="label">Validation Rules</div>
                         </div>
                     </div>
                     <div class="tech-stack">
-                        <span class="tech-tag">Talend</span>
-                        <span class="tech-tag">ETL</span>
-                        <span class="tech-tag">Documentation</span>
+                        <span class="tech-tag">Regex Validation</span>
+                        <span class="tech-tag">Error Recovery</span>
+                        <span class="tech-tag">Logging</span>
                     </div>
                 </div>
             </div>
